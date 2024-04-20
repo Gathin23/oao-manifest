@@ -1,0 +1,24 @@
+type AICallbackRequest @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  requestId: BigInt! # uint256
+  modelId: BigInt! # uint256
+  input: Bytes! # bytes
+  callbackContract: Bytes! # address
+  gasLimit: BigInt! # uint64
+  callbackData: Bytes! # bytes
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type AICallbackResult @entity(immutable: true) {
+  id: Bytes!
+  account: Bytes! # address
+  requestId: BigInt! # uint256
+  invoker: Bytes! # address
+  output: Bytes! # bytes
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}

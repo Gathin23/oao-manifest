@@ -1,0 +1,29 @@
+specVersion: 1.0.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: oaologic
+    network: sepolia
+    source:
+      address: "0xe47BC46FE676642eAED860E319363350B334236a"
+      abi: oaologic
+      startBlock: 5549465
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.7
+      language: wasm/assemblyscript
+      entities:
+        - AICallbackRequest
+        - AICallbackResult
+      abis:
+        - name: oaologic
+          file: ./abis/oaologic.json
+      eventHandlers:
+        - event: AICallbackRequest(indexed address,indexed uint256,uint256,bytes,address,uint64,bytes)
+          handler: handleAICallbackRequest
+        - event: AICallbackResult(indexed address,indexed uint256,address,bytes)
+          handler: handleAICallbackResult
+      file: ./src/oaologic.ts

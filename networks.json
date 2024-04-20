@@ -1,0 +1,8 @@
+{
+  "sepolia": {
+    "oaologic": {
+      "address": "0xe47BC46FE676642eAED860E319363350B334236a",
+      "startBlock": 5549465
+    }
+  }
+}
