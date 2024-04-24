@@ -10,6 +10,9 @@ type AICallbackRequest @entity(immutable: true) {
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
+  gasPrice: BigInt!
+  gasUsed: BigInt!
+  cumulativeGasUsed: BigInt!
 }
 
 type AICallbackResult @entity(immutable: true) {
@@ -21,4 +24,7 @@ type AICallbackResult @entity(immutable: true) {
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
+  gasPrice: BigInt!
+  gasUsed: BigInt!
+  cumulativeGasUsed: BigInt!
 }

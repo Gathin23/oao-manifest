@@ -24,6 +24,8 @@ dataSources:
       eventHandlers:
         - event: AICallbackRequest(indexed address,indexed uint256,uint256,bytes,address,uint64,bytes)
           handler: handleAICallbackRequest
+          receipt: true
         - event: AICallbackResult(indexed address,indexed uint256,address,bytes)
           handler: handleAICallbackResult
+          receipt: true
       file: ./src/oaologic.ts
